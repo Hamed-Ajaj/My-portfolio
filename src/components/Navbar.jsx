@@ -14,7 +14,10 @@ const Navbar = () => {
     // !logo
     <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300">
       <div>
-        <img src={Logo} alt="logo" className='w-[80px]   cursor-pointer'/>
+      <Link to="home"  smooth={true}  duration={500}>
+        <img src={Logo} alt="logo" className='w-[80px]   
+        cursor-pointer'/>
+      </Link>
       </div>
 
       {/* menu */}
