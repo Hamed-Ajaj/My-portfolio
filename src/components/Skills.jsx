@@ -6,6 +6,38 @@ import GitHub from '../assets/github.png';
 import Tailwind from '../assets/tailwind.png';
 
 const Skills = () => {
+    const data =[
+        {
+            id:1,
+            skill:'HTML',
+            img:HTML,
+        },
+        {
+            id:2,
+            skill:'CSS',
+            img:CSS,
+        },
+        {
+            id:3,
+            skill:'JavaScript',
+            img:JavaScript,
+        },
+        {
+            id:4,
+            skill:'ReactJs',
+            img:ReactImg,
+        },
+        {
+            id:5,
+            skill:'Github',
+            img:GitHub,
+        },
+        {
+            id:6,
+            skill:'TailwindCss',
+            img:Tailwind,
+        },
+    ]
   return (
     
     <div name='skills' className='w-full h-screen bg-[#0a192f] text-gray-300'>
@@ -17,30 +49,14 @@ const Skills = () => {
             <p className='py-4 text-gray-500'>//These are the technologies that I worked With.</p>
         </div>
         <div className='w-full grid grid-cols-2 gap-4 sm:grid-cols-4 text-center py-8'>
-            <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                <img src={HTML} alt="HTML" className='w-20 mx-auto'/>
-                <p className='my-4'>HTML</p>
-            </div>
-            <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                <img src={CSS} alt="css" className='w-20 mx-auto'/>
-                <p className='my-4'>CSS</p>
-            </div>
-            <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                <img src={JavaScript} alt="JavaScript" className='w-20 mx-auto'/>
-                <p className='my-4'>JavaScript</p>
-            </div>
-            <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                <img src={GitHub} alt="HTML" className='w-20 mx-auto'/>
-                <p className='my-4'>Github</p>
-            </div>
-            <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                <img src={Tailwind} alt="HTML" className='w-20 mx-auto'/>
-                <p className='my-4'>TailwindCss</p>
-            </div>
-            <div className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
-                <img src={ReactImg} alt="HTML" className='w-20 mx-auto'/>
-                <p className='my-4'>ReactJs</p>
-            </div>
+            {data.map(({id,skill,img}) =>{
+                return(
+                    <div key={id} className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
+                        <img src={img} alt="HTML" className='w-20 mx-auto'/>
+                        <p className='my-4'>{skill}</p>
+                    </div>
+                )
+            })}
         </div>
       </div>
     </div>

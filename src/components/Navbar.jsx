@@ -6,6 +6,44 @@ import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { Link } from 'react-scroll'
 
 const Navbar = () => {
+  const data = [
+    {
+      id:1,
+      name:"LinkedIn",
+      icon:<FaLinkedin size={30}/>,
+      link:"https://www.linkedin.com/in/hamed-ajaj19/",
+      styles:"bg-blue-600"
+    },
+    {
+      id:2,
+      name:"GitHub",
+      icon:<FaGithub size={30}/>,
+      link:"https://github.com/Hamed-Ajaj",
+      styles:"bg-slate-800"
+    },
+    {
+      id:3,
+      name:"Email",
+      icon:<HiOutlineMail size={30}/>,
+      link:"mailto:hamedsgaming@gmail.com",
+      styles:"bg-[#529f84]"
+    },
+    {
+      id:4,
+      name:"Instagram",
+      icon:<FaInstagram size={30}/>,
+      link:"https://www.instagram.com/hamed_ajaj/",
+      styles:"bg-insta"
+    },
+    {
+      id:5,
+      name:"Resume",
+      icon:<BsFillPersonLinesFill size={30}/>,
+      link:"/public/Hamed ajajCV.pdf",
+      styles:"bg-gray-500",
+      download:true
+    }
+  ]
     const [nav,setNav] = useState(false);
 
     const handleClick = () =>setNav(!nav)
@@ -89,31 +127,15 @@ const Navbar = () => {
       {/* social icons */}
       <div className='hidden fixed flex-col top-[35%] left-0 md:flex'>
         <ul>
-            <li className='flex justify-between items-center w-[160px] h-[60px] rounded-r-xl bg-blue-600  px-2 py-1 -ml-[120px] hover:-ml-[5px]  duration-300'>
-                <a href="https://www.linkedin.com/in/hamed-ajaj19/" className='flex justify-between items-center w-full text-gray-300'>
-                    LinkedIn <FaLinkedin size={30}/>
+          {data.map(({id,name,link,download,styles,icon})=>{
+            return(
+              <li key={id} className={'flex justify-between items-center w-[160px] h-[60px] rounded-r-xl   px-2 py-1 -ml-[120px] hover:-ml-[5px]  duration-300 '+styles}>
+                <a href={link} download ={download} className='flex justify-between items-center w-full text-gray-300'>
+                    {name} {icon}
                 </a>
-            </li>
-            <li className='flex justify-between items-center w-[160px] h-[60px] rounded-r-xl bg-slate-800  px-2 py-1 -ml-[120px] hover:-ml-[5px]  duration-300'>
-                <a href="https://github.com/Hamed-Ajaj" className='flex justify-between items-center w-full text-gray-300'>
-                    GitHub <FaGithub size={30}/>
-                </a>
-            </li>
-            <li className='flex justify-between items-center w-[160px] h-[60px] rounded-r-xl bg-[#529f84]  px-2 py-1 -ml-[120px] hover:-ml-[5px]  duration-300'>
-                <a href="mailto: hamedsgmaing@gmail.com" className='flex justify-between items-center w-full text-gray-300'>
-                    Email <HiOutlineMail size={30}/>
-                </a>
-            </li>
-            <li className='flex justify-between items-center w-[160px] h-[60px] rounded-r-xl bg-insta  px-2 py-1 -ml-[120px] hover:-ml-[5px]  duration-300'>
-                <a href="" className='flex justify-between items-center w-full text-gray-300'>
-                    Instagram <FaInstagram size={30}/>
-                </a>
-            </li>
-            <li className='flex justify-between items-center w-[160px] h-[60px] rounded-r-xl bg-gray-500  px-2 py-1 -ml-[120px] hover:-ml-[5px]  duration-300'>
-                <a href="/"  download className='flex justify-between items-center w-full text-gray-300'>
-                    Resume <BsFillPersonLinesFill size={30}/>
-                </a>
-            </li>
+              </li>
+            )
+          })}
         </ul>
       </div>
     </div>
