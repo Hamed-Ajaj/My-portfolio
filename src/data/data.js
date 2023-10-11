@@ -1,5 +1,4 @@
-import WorkIm from '../assets/projects/workImg.jpeg'
-import RealEst from '../assets/projects/realestate.jpg'
+
 import expenseTracker from '../assets/projects/Screenshot_1.png'
 import HomeWeb from '../assets/projects/Screenshot_4.png'
 import movieApp from '../assets/projects/Screenshot_2.png'
@@ -16,15 +15,15 @@ import weatherApp from '../assets/projects/Screenshot_3.png'
         id:2,
         name:"Movie App",
         image:movieApp,
-        github:"",
-        live:"",
+        github:"https://github.com/Hamed-Ajaj/movie-app.git",
+        live:"https://movie-app-mu-opal.vercel.app/",
     },
     {
         id:3,
         name:"Weather App",
         image:weatherApp,
-        github:"",
-        live:"",
+        github:"https://github.com/Hamed-Ajaj/weather-app.git",
+        live:"https://weather-app-psi-lovat.vercel.app/",
     },
     {
         id:4,
