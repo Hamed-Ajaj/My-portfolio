@@ -3,6 +3,7 @@ import expenseTracker from '../assets/projects/Screenshot_1.png'
 import HomeWeb from '../assets/projects/Screenshot_4.png'
 import movieApp from '../assets/projects/Screenshot_2.png'
 import weatherApp from '../assets/projects/Screenshot_3.png'
+import onlineClock from '../assets/projects/Screenshot_5.png'
  export const data=[
     {
         id:1,
@@ -32,6 +33,13 @@ import weatherApp from '../assets/projects/Screenshot_3.png'
         github:"https://github.com/Hamed-Ajaj/home-decoration.git",
         live:"https://tourmaline-meerkat-6f58ab.netlify.app/",
     },
+    {
+        id:5,
+        name: "online clock",
+        image:onlineClock,
+        github:"https://github.com/Hamed-Ajaj/online-clock.git",
+        live:"https://online-clock-tau.vercel.app/"
+    }
 
 
 ]
