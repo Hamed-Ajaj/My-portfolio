@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Logo from '../assets/HA-trs.png'
-import { FaBars, FaTimes ,FaGithub,FaLinkedin, FaInstagram} from 'react-icons/fa'
+import { FaBars, FaTimes ,FaGithub,FaLinkedin} from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { Link } from 'react-scroll'
@@ -27,13 +27,6 @@ const Navbar = () => {
       icon:<HiOutlineMail size={30}/>,
       link:"mailto:hamedsgaming@gmail.com",
       styles:"bg-[#529f84]"
-    },
-    {
-      id:4,
-      name:"Instagram",
-      icon:<FaInstagram size={30}/>,
-      link:"https://www.instagram.com/hamed_ajaj/",
-      styles:"bg-insta"
     },
     {
       id:5,
