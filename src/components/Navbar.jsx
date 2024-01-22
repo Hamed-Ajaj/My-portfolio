@@ -122,7 +122,7 @@ const Navbar = () => {
         <ul>
           {data.map(({id,name,link,download,styles,icon})=>{
             return(
-              <li key={id} className={'flex justify-between items-center w-[160px] h-[60px] rounded-r-xl   px-2 py-1 -ml-[120px] hover:-ml-[5px]  duration-300 '+styles}>
+              <li key={id} className={'flex justify-between items-center w-[160px] h-[60px] rounded-r-xl   px-2 py-1 -ml-[120px] hover:-ml-[3px]  duration-300 '+styles}>
                 <a href={link} download ={download} className='flex justify-between items-center w-full text-gray-300'>
                     {name} {icon}
                 </a>
