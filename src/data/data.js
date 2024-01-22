@@ -3,7 +3,7 @@ import expenseTracker from '../assets/projects/Screenshot_1.png'
 import GPT3Img from "../assets/projects/GPT3Img.png"
 import onlineClock from '../assets/projects/Screenshot_5.png'
 import HookBankImg from "../assets/projects/HookBankImg.png"
-import busselImg from "../assets/projects/Screenshot 2024-01-22 200729.png"
+import busselImg from "../assets/projects/bussel.png"
  export const data=[
     {
         id:1,
@@ -38,6 +38,6 @@ import busselImg from "../assets/projects/Screenshot 2024-01-22 200729.png"
         name:"Bussel App",
         image:busselImg,
         github:"https://github.com/Hamed-Ajaj/Busell-web.git",
-        live:"modernbankapp.vercel.app"
+        live:"busell-web.vercel.app"
     }
 ]
