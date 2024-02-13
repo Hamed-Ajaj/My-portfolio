@@ -4,6 +4,7 @@ import JavaScript from '../assets/javascript.png';
 import ReactImg from '../assets/react.png';
 import GitHub from '../assets/github.png';
 import Tailwind from '../assets/tailwind.png';
+import {motion} from 'framer-motion'
 
 const Skills = () => {
     const data =[
@@ -37,6 +38,11 @@ const Skills = () => {
             skill:'TailwindCss',
             img:Tailwind,
         },
+        {
+            id:7,
+            skill:"Redux",
+            img : "https://img.icons8.com/color/452/redux.png"
+        },
     ]
   return (
     
@@ -51,10 +57,15 @@ const Skills = () => {
         <div className='w-full grid grid-cols-2 gap-4 sm:grid-cols-4 text-center py-8'>
             {data.map(({id,skill,img}) =>{
                 return(
-                    <div key={id} className='shadow-md shadow-[#040c16] hover:scale-110 duration-500'>
+                    <motion.div key={id} 
+                    initial={{opacity:0, y:100}}
+                    whileInView={{opacity:1, y:0, transition:{duration:0.5,ease:'easeOut'}}}
+                    whileHover={{scale:1.1}}
+                    viewport={{once:true}}
+                    className='shadow-md shadow-[#040c16] '>
                         <img src={img} alt="HTML" className='w-20 mx-auto'/>
                         <p className='my-4'>{skill}</p>
-                    </div>
+                    </motion.div>
                 )
             })}
         </div>

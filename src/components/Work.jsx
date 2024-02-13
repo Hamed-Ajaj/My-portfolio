@@ -1,6 +1,6 @@
-import workImg from '../assets/projects/workImg.jpeg'
-import realEstate from '../assets/projects/realestate.jpg'
+
 import {data} from '../data/data.js'
+import {motion} from 'framer-motion'
 const Work = () => {
     const project = data
   return (
@@ -14,17 +14,46 @@ const Work = () => {
             </div>
             {/* grid item */}
             <div  
-            className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
+            className="grid gap-4 sm:grid-cols-2 md:grid-cols-2">
                 {/* grid item */}
                 {project?.map((item, index) => (
-                <div
+                <motion.div
                     key={index}
-                    style={{ backgroundImage: `url(${item.image})` }}
+                    style={{ backgroundImage: `url(${item.image})` ,backgroundSize: 'cover', backgroundPosition: 'center'}}
                     className="shadow-lg shadow-[#040c16] group container rounded-md 
                             flex justify-center text-center items-center mx-auto content-div "
+                    initial={{
+                        opacity: 0,
+                        y: 100
+                    }}
+                    whileInView={{
+                        opacity: 1,
+                        y: 0,
+                        transition: {
+                            duration: 1
+                        }
+                    }}
+                    viewport={{
+                        once: true
+                    }}
                 >
                     {/* Hover effect for images */}
-                    <div className="opacity-0 group-hover:opacity-100 ">
+                    <motion.div 
+                    initial={
+                        {
+                            opacity: 0
+                        }
+                    }
+                    whileHover={{
+                        opacity: 1,
+                        transition: {
+                            duration: 0.5   
+                        }
+                    }}
+                    exit={{
+                        opacity: 0
+                    }}
+                    className="w-full h-full flex flex-col justify-center">
                     <span className="text-2xl font bold text-white tracking-wider ">
                         {item.name}
                     </span>
@@ -48,8 +77,8 @@ const Work = () => {
                         </button>
                         </a>
                     </div>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
                 ))}
             </div>
         </div>

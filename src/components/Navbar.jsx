@@ -4,6 +4,7 @@ import { FaBars, FaTimes ,FaGithub,FaLinkedin} from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
 import { Link } from 'react-scroll'
+import {motion,AnimatePresence} from 'framer-motion'
 
 const Navbar = () => {
   const data = [
@@ -38,7 +39,38 @@ const Navbar = () => {
     }
   ]
     const [nav,setNav] = useState(false);
-
+  const ulVariants = {
+    hidden:{
+      opacity:0,
+      height : 0,
+      transition: {
+        duration:0.3,
+        ease:'easeInOut',
+      }
+    },
+    visible:{
+      opacity:1,
+      height : '100vh',
+      width : '100%',
+      display:'flex',
+      justifyContent:'center',
+      alignItems:'center',
+      flexDirection:'column',
+      transition: {
+        duration:0.3,
+        ease:'easeInOut',
+      }
+    },
+    exit:{
+      opacity:0,
+      height : 0,
+      transition: {
+        duration:0.3,
+        ease:'easeInOut',
+      }
+    
+    }
+  }
     const handleClick = () =>setNav(!nav)
 
   return (
@@ -54,31 +86,96 @@ const Navbar = () => {
       {/* menu */}
       <div className='hidden md:flex text-lg'>
       <ul >
-            <li className='inline-block px-4 py-2 hover:text-white cursor-pointer'>
+            <motion.li 
+              initial={{
+                opacity:0,
+                x:-10
+              }}
+              animate={{
+                opacity:1,
+                x:0,
+                transition:{
+                  duration:0.5,
+                  ease:'easeInOut'
+                }
+              }}  
+            className='inline-block px-4 py-2 hover:text-white cursor-pointer'>
                 <Link to="home"  smooth={true}  duration={500}>
                   Home
                 </Link>
-            </li>
-            <li className='inline-block px-4 py-2 hover:text-white cursor-pointer'>
+            </motion.li>
+            <motion.li 
+            initial={{
+              x:-10,
+              opacity:0
+            }}
+            animate={{
+              x:0,
+              opacity:1,
+              transition:{
+                duration:0.6,
+                ease:'easeInOut'
+              }
+            }} 
+            className='inline-block px-4 py-2 hover:text-white cursor-pointer'>
                 <Link to="about"  smooth={true}  duration={500}>
                   About
                 </Link>
-            </li>
-            <li className='inline-block px-4 py-2 hover:text-white cursor-pointer'>
+            </motion.li>
+            <motion.li 
+              initial={{
+                x:-10,
+                opacity:0
+              }}
+              animate={{
+                x:0,
+                opacity:1,
+                transition:{
+                  duration:0.7,
+                  ease:'easeInOut'
+                }
+              }} 
+            className='inline-block px-4 py-2 hover:text-white cursor-pointer'>
                 <Link to="skills"  smooth={true}  duration={500}>
                   Skills
                 </Link>
-            </li>
-            <li className='inline-block px-4 py-2 hover:text-white cursor-pointer'>
+            </motion.li>
+            <motion.li 
+              initial={{
+                x:-10,
+                opacity:0
+              }}
+              animate={{
+                opacity:1,
+                x:0,
+                transition:{
+                  duration:0.75,
+                  ease:'easeInOut'
+                }
+              }} 
+            className='inline-block px-4 py-2 hover:text-white cursor-pointer'>
             <Link to="work"  smooth={true}  duration={500}>
                   Work
                 </Link>
-            </li>
-            <li className='inline-block px-4 py-2 hover:text-white cursor-pointer'>
+            </motion.li>
+            <motion.li 
+              initial={{
+                x:-10,
+                opacity:0
+              }}
+              animate={{
+                opacity:1,
+                x:0,
+                transition:{
+                  duration:0.8,
+                  ease:'easeInOut'
+                }
+              }} 
+            className='inline-block px-4 py-2 hover:text-white cursor-pointer'>
             <Link to="contact"  smooth={true}  duration={500}>
                   Contact
                 </Link>
-            </li>
+            </motion.li>
         </ul>
       </div>
 
@@ -87,35 +184,84 @@ const Navbar = () => {
         {nav ? <FaTimes className='text-2xl'/>:<FaBars className='text-2xl'/>}
       </div>
 
-      {/* ! mobile menu */}
-        <ul className={nav?"absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center space-y-6 text-4xl transition ":"hidden"}>
-        <li>
-          <Link onClick={handleClick} to='home' smooth={true} duration={500}>
-            Home
-          </Link>
-        </li>
-        <li>
-          <Link  onClick={handleClick} to='about' smooth={true} duration={500}>
-            About
-          </Link>
-        </li>
-        <li>
-          <Link  onClick={handleClick} to='skills' smooth={true} duration={500}>
-            Skills
-          </Link>
-        </li>
-        <li>
-          <Link  onClick={handleClick} to='work' smooth={true} duration={500}>
-            Work
-          </Link>
-        </li>
-        <li>
-          <Link  onClick={handleClick} to='contact' smooth={true} duration={500}>
-            Contact
-          </Link>
-        </li>
-            </ul>
-  
+        {/* ! mobile menu */}
+        <AnimatePresence>
+        <motion.div
+          variants={ulVariants}
+          initial='hidden'
+          animate={nav?"visible":"hidden"}
+          exit='exit'
+          className={"absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-center bg-[#0a192f]  space-y-8 text-4xl transition "}
+        >
+          <motion.ul 
+           className='flex flex-col justify-center items-center space-y-8 text-4xl transition'
+           initial={{
+            opacity:0,
+           }}
+            animate={{
+              opacity:1,
+              transition:{
+                duration:1,
+                ease:'easeInOut'
+              }
+            }}
+            exit={{
+              opacity:0,
+              transition:{
+                duration:1,
+                ease:'easeInOut'
+              }
+            
+            }}
+          >
+          <motion.li>
+            <Link onClick={handleClick} to='home' smooth={true} duration={500}>
+              <motion.p
+                whileHover={{scale:1.1}}
+              >
+                Home
+              </motion.p>
+            </Link>
+          </motion.li>
+          <motion.li>
+            <Link  onClick={handleClick} to='about' smooth={true} duration={500}>
+              <motion.p
+                whileHover={{scale:1.1}}
+              >
+                About
+              </motion.p>
+            </Link>
+          </motion.li>
+          <motion.li>
+            <Link  onClick={handleClick} to='skills' smooth={true} duration={500}>
+              <motion.p
+                whileHover={{scale:1.1}}
+              >
+                Skills
+              </motion.p>
+            </Link>
+          </motion.li>
+          <motion.li>
+            <Link  onClick={handleClick} to='work' smooth={true} duration={500}>
+              <motion.p
+              whileHover={{scale:1.1}}
+              >
+                Work
+              </motion.p>
+            </Link>
+          </motion.li>
+          <motion.li>
+            <Link  onClick={handleClick} to='contact' smooth={true} duration={500}>
+              <motion.p
+                whileHover={{scale:1.1}}
+              >
+                Contact
+              </motion.p>
+            </Link>
+          </motion.li>
+              </motion.ul>
+        </motion.div>
+      </AnimatePresence>
 
       {/* social icons */}
       <div className='hidden fixed flex-col top-[35%] left-0 md:flex'>
