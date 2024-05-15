@@ -5,45 +5,9 @@ import ReactImg from '../assets/react.png';
 import GitHub from '../assets/github.png';
 import Tailwind from '../assets/tailwind.png';
 import {motion} from 'framer-motion'
-
+import { SkillsData } from '../data/data';
 const Skills = () => {
-    const data =[
-        {
-            id:1,
-            skill:'HTML',
-            img:HTML,
-        },
-        {
-            id:2,
-            skill:'CSS',
-            img:CSS,
-        },
-        {
-            id:3,
-            skill:'JavaScript',
-            img:JavaScript,
-        },
-        {
-            id:4,
-            skill:'ReactJs',
-            img:ReactImg,
-        },
-        {
-            id:5,
-            skill:'Github',
-            img:GitHub,
-        },
-        {
-            id:6,
-            skill:'TailwindCss',
-            img:Tailwind,
-        },
-        {
-            id:7,
-            skill:"Redux",
-            img : "https://img.icons8.com/color/452/redux.png"
-        },
-    ]
+    
   return (
     
     <div name='skills' className='w-full h-screen bg-[#0a192f] text-gray-300'>
@@ -55,7 +19,7 @@ const Skills = () => {
             <p className='py-4 text-gray-500'>//These are the technologies that I worked With.</p>
         </div>
         <div className='w-full grid grid-cols-2 gap-4 sm:grid-cols-4 text-center py-8'>
-            {data.map(({id,skill,img}) =>{
+            {SkillsData.map(({id,skill,img}) =>{
                 return(
                     <motion.div key={id} 
                     initial={{opacity:0, y:100}}

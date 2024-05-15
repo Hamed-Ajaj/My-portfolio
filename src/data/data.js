@@ -4,6 +4,7 @@ import GPT3Img from "../assets/projects/GPT3Img.png"
 import onlineClock from '../assets/projects/Screenshot_5.png'
 import HookBankImg from "../assets/projects/HookBankImg.png"
 import busselImg from "../assets/projects/bussel.png"
+import GoogleClone from "../assets/projects/image.png"
  export const data=[
     {
         id:1,
@@ -39,5 +40,62 @@ import busselImg from "../assets/projects/bussel.png"
         image:busselImg,
         github:"https://github.com/Hamed-Ajaj/Busell-web.git",
         live:"busell-web.vercel.app"
+    },
+    {
+        id:6,
+        name:"Google Clone",
+        image:GoogleClone,
+        github:"https://github.com/Hamed-Ajaj/google-clone.git",
+        live:"https://google-clone-xi-navy.vercel.app/"
+    },
+    {
+        id:7,
+        name:"Crypto App",
+        image:CryptoApp,
+        github:"https://github.com/Hamed-Ajaj/crypto-app.git",
+        live:"https://vercel.com/hamed-team/crypto-app"
+    }
+]
+
+export const SkillsData =[
+    {
+        id:1,
+        skill:'HTML',
+        img:HTML,
+    },
+    {
+        id:2,
+        skill:'CSS',
+        img:CSS,
+    },
+    {
+        id:3,
+        skill:'JavaScript',
+        img:JavaScript,
+    },
+    {
+        id:4,
+        skill:'ReactJs',
+        img:ReactImg,
+    },
+    {
+        id:5,
+        skill:'Github',
+        img:GitHub,
+    },
+    {
+        id:6,
+        skill:'TailwindCss',
+        img:Tailwind,
+    },
+    {
+        id:7,
+        skill:"Redux",
+        img : "https://img.icons8.com/color/452/redux.png"
+    },
+    {
+        id:8,
+        skill:"NextJs",
+        img:"https://img.icons8.com/color/452/nextjs.png"
     }
 ]
