@@ -5,6 +5,7 @@ import onlineClock from '../assets/projects/Screenshot_5.png'
 import HookBankImg from "../assets/projects/HookBankImg.png"
 import busselImg from "../assets/projects/bussel.png"
 import GoogleClone from "../assets/projects/image.png"
+import CryptoApp from "../assets/projects/CryptoApp.png"
  export const data=[
     {
         id:1,
