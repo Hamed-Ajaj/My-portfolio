@@ -1,4 +1,4 @@
-
+// !projects assets
 import expenseTracker from '../assets/projects/Screenshot_1.png'
 import GPT3Img from "../assets/projects/GPT3Img.png"
 import onlineClock from '../assets/projects/Screenshot_5.png'
@@ -6,6 +6,16 @@ import HookBankImg from "../assets/projects/HookBankImg.png"
 import busselImg from "../assets/projects/bussel.png"
 import GoogleClone from "../assets/projects/image.png"
 import CryptoApp from "../assets/projects/CryptoApp.png"
+
+// ? skills assets
+import HTML from '../assets/html.png';
+import CSS from '../assets/css.png';
+import JavaScript from '../assets/javascript.png';
+import ReactImg from '../assets/react.png';
+import GitHub from '../assets/github.png';
+import Tailwind from '../assets/tailwind.png';
+
+
  export const data=[
     {
         id:1,
